@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">PosModeTest</string>
+
+    <string name="button_start">START</string>
+    <string name="button_end">STOP</string>
+    <string name="button_delete">🗑️ DEL AD</string>
+
+    <string name="label_full_track">Full Track</string>
+    <string name="label_fix_timer">FixTime:</string>
+    <string name="run_timer_divider">" / "</string>
+    <string name="label_status">GNSS STATUS:</string>
+
+    <string name="label_latitude_s">Lat:</string>
+    <string name="label_longitude_s">Lng:</string>
+    <string name="label_altitude_s">Alt:</string>
+    <string name="label_accuracy_s">Hacc:</string>
+    <string name="label_vertical_accuracy_s">Vacc:</string>
+    <string name="label_speed_s">Speed:</string>
+    <string name="label_time_s">Time:</string>
+    <string name="label_elapsed_time_s">LocEt:</string>
+    <string name="label_sys_elapsed_time_s">SysEt:</string>
+    <string name="label_bearing_s">Bear:</string>
+    <string name="label_bear_accuracy_s">Bacc:</string>
+    <string name="label_provider_s">Prv:</string>
+
+    <string name="label_wifi">WIFI:</string>
+    <string name="label_mobile">MOBILE:</string>
+    <string name="label_data">DATA:</string>
+    <string name="label_agnss">AGNSS:</string>
+    <string name="label_roam">Roaming:</string>
+    <string name="label_supl_apn">SuplApn:</string>
+
+    <string name="gnss_status_started">STARTED</string>
+    <string name="gnss_status_searching">SEARCHING</string>
+    <string name="gnss_status_acquiring">ACQUIRING</string>
+    <string name="gnss_status_tracking">TRACKING</string>
+    <string name="gnss_status_stopped">STOPPED</string>
+
+    <string-array name="pos_providers">
+        <item>gps</item>
+        <item>network</item>
+        <item>fused</item>
+        <item>passive</item>
+    </string-array>
+    <string name="pos_mode_track">track</string>
+    <string name="pos_mode_single">single</string>
+    <string name="pos_mode_last">last</string>
+    <string-array name="pos_modes">
+        <item>@string/pos_mode_track</item>
+        <item>@string/pos_mode_single</item>
+        <item>@string/pos_mode_last</item>
+    </string-array>
+    <string name="pos_quality_high_acc">high accuracy</string>
+    <string name="pos_quality_balanced">balanced</string>
+    <string name="pos_quality_low_power">low power</string>
+    <string-array name="pos_qualities">
+        <item>@string/pos_quality_balanced</item>
+        <item>@string/pos_quality_high_acc</item>
+        <item>@string/pos_quality_low_power</item>
+    </string-array>
+
+    <string name="tbl_cell_c1_sim">SIM</string>
+    <string name="tbl_cell_c2_type">TYPE</string>
+    <string name="tbl_cell_c3_phy_id">PhyID</string>
+    <string name="tbl_cell_c4_plmn">PLMN</string>
+    <string name="tbl_cell_c6_freq">Freq</string>
+    <string name="tbl_cell_c5_dbm">Dbm</string>
+    <string name="tbl_empty_s">-</string>
+
+    <string name="tbl_gnss_c1_prn">PRN</string>
+    <string name="tbl_gnss_c2_cn_ratio">C/N</string>
+    <string name="tbl_gnss_c3_freq">Freq</string>
+    <string name="tbl_gnss_c4_flag">Flg</string>
+
+    <string name="menu_read_config">Read Config</string>
+    <string name="menu_radio_info">Radio Info</string>
+    <string name="menu_airplane_mode">Network Settings</string>
+    <string name="menu_location_settings">Location Settings</string>
+    <string name="menu_open_in_map">Open in Map</string>
+    <string name="menu_geocode">Geocode</string>
+    <string name="menu_app_info">App Info</string>
+    <string name="menu_nfw_info">NFW Loc Info</string>
+    <string name="menu_logalong">Logalong</string>
+    <string name="menu_gms_update">Update GMS</string>
+    <string name="menu_refresh">Refresh</string>
+
+    <string name="cmn_enabled">Enabled</string>
+    <string name="cmn_disabled">Disabled</string>
+
+    <string name="title_activity_read_config">Device Config</string>
+    <string name="menu_bluesky_check">Bluesky Check</string>
+
+    <string name="negative_duration" msgid="1938335096972945232">"−<xliff:g id="TIME">%1$s</xliff:g>"</string>
+
+</resources>

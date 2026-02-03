@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="pos.modetest.data.CellInfoHolder" />
+        <variable name="cellInfo" type="CellInfoHolder" />
+    </data>
+
+    <TableRow
+        android:paddingHorizontal="@dimen/table_row_margin_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/sim_slot"
+            android:gravity="end"
+            android:text="@{cellInfo.slot}"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/cell_type"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@{cellInfo.extendedType}"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/cell_phy_id"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@{cellInfo.phyId}"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/cell_plmn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@{cellInfo.PLMN}"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/cell_freq"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@{cellInfo.frequency}"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/cell_dbm"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@{cellInfo.strength}"
+            android:textSize="11sp" />
+
+    </TableRow>
+</layout>

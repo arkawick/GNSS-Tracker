@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="pos.modetest.data.GnssSvStatusHolder" />
+        <variable name="sv" type="GnssSvStatusHolder" />
+    </data>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@{sv.constellationAsColor}">
+
+        <TextView
+            android:id="@+id/prn_text"
+            android:layout_gravity="end"
+            android:text="@{sv.prn}" />
+
+        <TextView
+            android:id="@+id/cn_ratio_text"
+            android:layout_gravity="end"
+            android:text="@{sv.CNRatio}" />
+
+        <TextView
+            android:id="@+id/freq_text"
+            android:layout_gravity="end"
+            android:paddingEnd="4dp"
+            android:text="@{sv.frequency}" />
+
+        <TextView
+            android:id="@+id/flag_text"
+            android:typeface="monospace"
+            android:layout_gravity="end"
+            android:paddingEnd="8dp"
+            android:text="@{sv.flags}" />
+
+    </TableRow>
+</layout>

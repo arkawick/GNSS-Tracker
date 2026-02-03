@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="fixCount" type="Integer" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="4dp" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:ignore="RtlSymmetry">
+
+            <!-- Column 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <!-- Input Row 1 - Provider, Mode -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/table_row_margin_horizontal"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spinner_pos_prov"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:entries="@array/pos_providers"
+                        android:paddingVertical="16dp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_pos_mode"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:entries="@array/pos_modes"
+                        android:paddingVertical="16dp" />
+                </LinearLayout>
+
+                <!-- Input Row 2 - Quality, Full Track -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/table_row_margin_horizontal"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spinner_pos_qualities"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:entries="@array/pos_qualities"
+                        android:paddingVertical="16dp" />
+
+                    <CheckBox
+                        android:id="@+id/check_full_track"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:paddingVertical="16dp"
+                        android:text="@string/label_full_track" />
+                </LinearLayout>
+
+                <!-- Output Section 1 - Timer -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/table_row_margin_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_fix_timer" />
+
+                    <pos.modetest.widgets.Chronometer
+                        android:id="@+id/fix_timer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/table_row_margin_horizontal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/run_timer_divider" />
+
+                    <pos.modetest.widgets.Chronometer
+                        android:id="@+id/run_timer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/table_row_margin_horizontal"
+                        android:text="@{'(' + fixCount.toString() + ')'}"
+                        tools:text="(10)" />
+
+                </LinearLayout>
+
+                <!-- Output Scrollable - Location, GNSS, Network -->
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- Output Section 2 - Location Fix -->
+                        <include
+                            android:id="@+id/layout_loc_info"
+                            layout="@layout/layout_loc_info" />
+
+                        <!-- Output Section 3 - GNSS Status -->
+                        <include
+                            android:id="@+id/layout_gnss_info"
+                            layout="@layout/layout_gnss_info" />
+
+                        <!-- Output Section 4 - Network Status -->
+                        <include
+                            android:id="@+id/layout_net_info"
+                            layout="@layout/layout_net_info" />
+
+                        <!-- Output Section 5 - Visible Cells Table -->
+                        <TableLayout
+                            android:id="@+id/cell_info_table"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:stretchColumns="1,2,3" />
+
+                    </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
+            <!-- Column 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <!-- Control Row 1 - Delete AD, Start/Stop -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/table_row_margin_horizontal"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:paddingVertical="8dp"
+                        android:text="@string/button_delete" />
+
+                    <ToggleButton
+                        android:id="@+id/button_run"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/button_start"
+                        android:textOff="@string/button_start"
+                        android:textOn="@string/button_end" />
+                </LinearLayout>
+
+                <!-- Output Section 6 - Configuration/GNSS SV Info -->
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ViewSwitcher
+                        android:id="@+id/switcher_tbl_conf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Configuration - Sysprop, CarrierConfig, gps.conf -->
+                        <TextView
+                            android:id="@+id/conf"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
+
+                        <!-- GNSS SV Info Table -->
+                        <TableLayout
+                            android:id="@+id/sv_table"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:stretchColumns="*" />
+                    </ViewSwitcher>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

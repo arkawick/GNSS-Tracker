@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="pos.modetest.data.LocationHolder" />
+        <variable name="loc" type="LocationHolder" />
+    </data>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gen_table_bg"
+        android:paddingHorizontal="@dimen/table_row_margin_horizontal"
+        android:stretchColumns="1,3"
+        tools:ignore="RtlSymmetry">
+
+        <!-- Latitude -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_span="1"
+                android:text="@string/label_latitude_s"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/latitude_text"
+                android:layout_span="3"
+                android:text="@{loc.latitude}" />
+        </TableRow>
+
+        <!-- Longitude -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_span="1"
+                android:text="@string/label_longitude_s"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/longitude_text"
+                android:layout_span="3"
+                android:text="@{loc.longitude}" />
+        </TableRow>
+
+        <!-- Altitude -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_span="1"
+                android:text="@string/label_altitude_s"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/altitude_text"
+                android:layout_span="3"
+                android:text="@{loc.altitude}" />
+        </TableRow>
+
+        <!-- Accuracy, Bearing -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/label_accuracy_s"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/accuracy_text"
+                android:layout_width="wrap_content"
+                android:layout_gravity="end"
+                android:paddingEnd="@dimen/table_row_margin_horizontal"
+                android:text="@{loc.accuracy}"
+                android:textColor="@color/em_important" />
+
+            <TextView
+                android:text="@string/label_bearing_s"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bearing_text"
+                android:layout_width="wrap_content"
+                android:layout_gravity="end"
+                android:paddingEnd="@dimen/table_row_margin_horizontal"
+                android:text="@{loc.bearing}" />
+        </TableRow>
+
+        <!-- Vertical Accuracy, Bearing Accuracy -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/label_vertical_accuracy_s"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/vert_accuracy_text"
+                android:layout_width="wrap_content"
+                android:layout_gravity="end"
+                android:paddingEnd="@dimen/table_row_margin_horizontal"
+                android:text="@{loc.verticalAccuracy}" />
+
+            <TextView
+                android:text="@string/label_bear_accuracy_s"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bear_accuracy_text"
+                android:layout_width="wrap_content"
+                android:layout_gravity="end"
+                android:paddingEnd="@dimen/table_row_margin_horizontal"
+                android:text="@{loc.bearingAccuracy}" />
+        </TableRow>
+
+        <!-- Speed, Provider -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/label_speed_s"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/speed_text"
+                android:layout_width="wrap_content"
+                android:layout_gravity="end"
+                android:paddingEnd="@dimen/table_row_margin_horizontal"
+                android:text="@{loc.speed}" />
+
+            <TextView
+                android:text="@string/label_provider_s"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/provider_text"
+                android:layout_width="wrap_content"
+                android:layout_gravity="end"
+                android:paddingEnd="@dimen/table_row_margin_horizontal"
+                android:text="@{loc.provider}" />
+        </TableRow>
+
+        <!-- Time -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_span="1"
+                android:text="@string/label_time_s"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/time_text"
+                android:layout_span="3"
+                android:text="@{loc.time}" />
+        </TableRow>
+
+        <!-- Elapsed Time -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_span="1"
+                android:text="@string/label_elapsed_time_s"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_span="3"
+                android:text="@{loc.realTime}" />
+        </TableRow>
+
+        <!-- System Elapsed Time -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_span="1"
+                android:text="@string/label_sys_elapsed_time_s"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_span="3"
+                android:text="@{loc.sysRealTime}" />
+        </TableRow>
+
+    </TableLayout>
+
+</layout>

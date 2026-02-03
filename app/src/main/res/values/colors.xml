@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_app_fg">#ff8000</color>
+    <color name="ic_app_bg">#ffffff</color>
+
+    <color name="red">#ff0000</color>
+    <color name="blue">#0000ff</color>
+
+    <color name="error">#B3261E</color>
+    <color name="success">#388E3C</color>
+
+    <color name="em_important">@color/red</color>
+    <color name="gen_table_bg">#edf2f2</color>
+    <color name="tbl_header_bg">#f5f5dc</color>
+
+    <!-- Constellation colors -->
+    <color name="sv_gps">#d7f4db</color><!-- green -->
+    <color name="sv_glonass">#e2f8f8</color><!-- blue -->
+    <color name="sv_beidou">#f7e3ea</color><!-- red -->
+    <color name="sv_sbas">#ffffff</color><!-- white -->
+    <color name="sv_galileo">#fafad2</color><!-- yellow -->
+    <color name="sv_qzss">#ffa07a</color><!-- orange -->
+    <color name="sv_irnss">#ff9f94</color><!-- pink -->
+    <color name="sv_unknown">#808080</color><!-- gray -->
+</resources>
