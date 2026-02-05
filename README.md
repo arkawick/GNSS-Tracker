@@ -1,10 +1,10 @@
-# GNSS-Tracker (PosModeTest)
+# GNSS-Tracker
 
 > A Professional GNSS Testing Tool for Android - Understanding the Complete GPS Acquisition Flow
 
 ## Overview
 
-This repository contains **PosModeTest**, a professional GNSS (Global Navigation Satellite System) testing and debugging application originally developed by Sony for internal device testing. The app provides deep visibility into the Android location stack and Qualcomm GNSS hardware.
+This repository contains a professional GNSS (Global Navigation Satellite System) testing and debugging application originally developed by Sony for internal device testing. The app provides deep visibility into the Android location stack and Qualcomm GNSS hardware.
 
 This document also traces the complete technical flow of GPS location acquisition, demonstrating what happens under the hood when your app requests a location fix.
 
